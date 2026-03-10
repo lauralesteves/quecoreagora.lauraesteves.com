@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:pt": "VITE_LOCALE=pt vite build",
+    "build:en": "VITE_LOCALE=en vite build",
+    "build:all": "tsc -b && VITE_LOCALE=pt vite build --outDir dist-pt && VITE_LOCALE=en vite build --outDir dist-en",
     "check": "biome check . --write",
     "preview": "vite preview",
     "test": "vitest",
