@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "VITE_LOCALE=pt vite",
+    "dev:en": "VITE_LOCALE=en vite",
     "build": "tsc -b && vite build",
     "build:pt": "VITE_LOCALE=pt vite build",
     "build:en": "VITE_LOCALE=en vite build",
