@@ -1,0 +1,32 @@
+import { useTimeColor } from '../../hooks/useTimeColor';
+
+export function ColorDisplay() {
+  const { hex, display } = useTimeColor();
+
+  return (
+    <main
+      className="flex flex-1 flex-col items-center justify-center transition-colors duration-800 will-change-[background-color]"
+      style={{ backgroundColor: hex }}
+    >
+      <div className="flex items-center gap-4 mb-8">
+        <span className="block w-20 border-t border-dashed border-white sm:w-40 md:w-64" />
+        <h1 className="font-display text-white text-lg sm:text-2xl md:text-[32px] tracking-wide whitespace-nowrap">
+          Que cor é agora?
+        </h1>
+        <span className="block w-20 border-t border-dashed border-white sm:w-40 md:w-64" />
+      </div>
+
+      <p className="font-display text-white text-[60px] leading-none sm:text-[80px] md:text-[150px]">
+        {display}
+      </p>
+
+      <p className="font-display text-white text-[21px] sm:text-4xl md:text-[52px] mt-2 border-t border-b border-white/30 px-4 py-1">
+        {hex}
+      </p>
+
+      <p className="font-display text-white text-lg sm:text-2xl md:text-[32px] mt-8 text-center px-4">
+        Mais um site de extrema utilidade pública
+      </p>
+    </main>
+  );
+}
