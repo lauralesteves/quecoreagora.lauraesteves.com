@@ -3,6 +3,8 @@ node_modules/
 
 # Build
 dist/
+dist-pt/
+dist-en/
 
 # Environment
 .env

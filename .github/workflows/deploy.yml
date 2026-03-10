@@ -17,8 +17,14 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Build
-        run: bun run build
+      - name: Build PT
+        run: VITE_LOCALE=pt bun run vite build --outDir dist-pt
+
+      - name: Build EN
+        run: VITE_LOCALE=en bun run vite build --outDir dist-en
+
+      - name: Type check
+        run: bun run tsc -b
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -27,9 +33,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy assets to S3 (immutable cache)
+      - name: Deploy PT assets to S3 (immutable cache)
         run: |
-          aws s3 sync dist/ s3://quecoreagora.lauraesteves.com \
+          aws s3 sync dist-pt/ s3://quecoreagora.lauraesteves.com \
             --delete \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "*.html" \
@@ -40,9 +46,9 @@ jobs:
             --exclude "humans.txt" \
             --exclude ".well-known/*"
 
-      - name: Deploy HTML and metadata to S3 (short cache)
+      - name: Deploy PT HTML and metadata to S3 (short cache)
         run: |
-          aws s3 sync dist/ s3://quecoreagora.lauraesteves.com \
+          aws s3 sync dist-pt/ s3://quecoreagora.lauraesteves.com \
             --delete \
             --cache-control "public, max-age=3600" \
             --exclude "*" \
@@ -54,8 +60,38 @@ jobs:
             --include "humans.txt" \
             --include ".well-known/*"
 
-      - name: Invalidate CloudFront cache
+      - name: Deploy EN assets to S3 (immutable cache)
+        run: |
+          aws s3 sync dist-en/ s3://whatcolorisitnow.lauraesteves.com \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
+            --exclude "robots.txt" \
+            --exclude "site.webmanifest" \
+            --exclude "browserconfig.xml" \
+            --exclude "ai.txt" \
+            --exclude "humans.txt" \
+            --exclude ".well-known/*"
+
+      - name: Deploy EN HTML and metadata to S3 (short cache)
+        run: |
+          aws s3 sync dist-en/ s3://whatcolorisitnow.lauraesteves.com \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "robots.txt" \
+            --include "site.webmanifest" \
+            --include "browserconfig.xml" \
+            --include "ai.txt" \
+            --include "humans.txt" \
+            --include ".well-known/*"
+
+      - name: Invalidate CloudFront caches
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.EN_CLOUDFRONT_DISTRIBUTION_ID }} \
             --paths "/*"
