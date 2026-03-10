@@ -9,6 +9,7 @@ interface Translations {
   footerText: string;
   footerName: string;
   lauraUrl: string;
+  escrevidaUrl: string;
   siteUrl: string;
   alternateSiteUrl: string;
   alternateFlag: string;
@@ -24,6 +25,7 @@ const pt: Translations = {
   footerText: 'Feito com ❤️ e ☕️ por',
   footerName: 'Laura Esteves',
   lauraUrl: 'https://lauraesteves.com',
+  escrevidaUrl: 'https://escrevida.com',
   siteUrl: 'https://quecoreagora.lauraesteves.com',
   alternateSiteUrl: 'https://whatcolorisitnow.lauraesteves.com',
   alternateFlag: '/images/flags/en.svg',
@@ -40,6 +42,7 @@ const en: Translations = {
   footerText: 'Made with ❤️ and ☕️ by',
   footerName: 'Laura Esteves',
   lauraUrl: 'https://lauraesteves.com/en',
+  escrevidaUrl: 'https://escrevida.com/en/',
   siteUrl: 'https://whatcolorisitnow.lauraesteves.com',
   alternateSiteUrl: 'https://quecoreagora.lauraesteves.com',
   alternateFlag: '/images/flags/pt.svg',

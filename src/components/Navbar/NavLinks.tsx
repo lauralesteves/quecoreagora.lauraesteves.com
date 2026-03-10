@@ -17,7 +17,7 @@ export function NavLinks({ vertical = false }: NavLinksProps) {
         Laura Esteves
       </ExternalLink>
       <ExternalLink
-        href="https://escrevida.com"
+        href={t.escrevidaUrl}
         className="text-base font-bold tracking-wide uppercase"
       >
         Escrevida
