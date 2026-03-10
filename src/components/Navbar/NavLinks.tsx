@@ -1,3 +1,4 @@
+import { t } from '../../i18n/locale';
 import { ExternalLink } from '../ui/ExternalLink';
 
 interface NavLinksProps {
@@ -10,7 +11,7 @@ export function NavLinks({ vertical = false }: NavLinksProps) {
       className={`flex ${vertical ? 'flex-col gap-4' : 'items-center gap-6'}`}
     >
       <ExternalLink
-        href="https://lauraesteves.com"
+        href={t.lauraUrl}
         className="text-base font-bold tracking-wide uppercase"
       >
         Laura Esteves

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { t } from '../../i18n/locale';
+import { LanguageFlag } from './LanguageFlag';
 import { NavLinks } from './NavLinks';
 import { SocialIcons } from './SocialIcons';
 
@@ -41,13 +43,16 @@ function CloseIcon() {
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const openLabel = t.lang === 'pt-BR' ? 'Abrir menu' : 'Open menu';
+  const closeLabel = t.lang === 'pt-BR' ? 'Fechar menu' : 'Close menu';
+
   return (
     <div className="md:hidden">
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="text-white p-2"
-        aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        aria-label={isOpen ? closeLabel : openLabel}
       >
         {isOpen ? <CloseIcon /> : <HamburgerIcon />}
       </button>
@@ -59,8 +64,9 @@ export function MobileMenu() {
       >
         <div className="px-6 py-5 flex flex-col gap-4">
           <NavLinks vertical />
-          <div className="border-t border-white/30 pt-4">
+          <div className="border-t border-white/30 pt-4 flex items-center gap-4">
             <SocialIcons />
+            <LanguageFlag />
           </div>
         </div>
       </div>

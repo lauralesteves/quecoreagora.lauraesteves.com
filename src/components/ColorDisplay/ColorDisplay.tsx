@@ -1,4 +1,5 @@
 import { useTimeColor } from '../../hooks/useTimeColor';
+import { t } from '../../i18n/locale';
 
 export function ColorDisplay() {
   const { hex, display } = useTimeColor();
@@ -11,7 +12,7 @@ export function ColorDisplay() {
       <div className="flex items-center gap-4 mb-8">
         <span className="block w-20 h-[3px] bg-white sm:w-40 md:w-64" />
         <h1 className="font-display text-white text-lg sm:text-2xl md:text-[32px] tracking-wide whitespace-nowrap">
-          Que cor é agora?
+          {t.displayTitle}
         </h1>
         <span className="block w-20 h-[3px] bg-white sm:w-40 md:w-64" />
       </div>
@@ -25,7 +26,7 @@ export function ColorDisplay() {
       </p>
 
       <p className="font-display text-white text-lg sm:text-2xl md:text-[32px] mt-8 text-center px-4">
-        Mais um site de extrema utilidade pública
+        {t.displaySubtitle}
       </p>
     </main>
   );
