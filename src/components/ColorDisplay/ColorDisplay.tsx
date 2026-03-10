@@ -20,7 +20,7 @@ export function ColorDisplay() {
         {display}
       </p>
 
-      <p className="font-display text-white text-[21px] sm:text-4xl md:text-[52px] mt-2 border-t border-b border-white/30 px-4 py-1">
+      <p className="font-display text-white text-[21px] sm:text-4xl md:text-[52px] mt-2 border-t-2 border-b-2 border-white/30 px-4 py-1">
         {hex}
       </p>
 

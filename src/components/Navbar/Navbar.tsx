@@ -5,7 +5,7 @@ import { SocialIcons } from './SocialIcons';
 export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="flex items-center px-6 py-4">
+      <div className="flex items-center px-6 py-4 pr-[100px]">
         <span className="font-logo text-white text-2xl hidden md:block">
           Que cor é agora?
         </span>
