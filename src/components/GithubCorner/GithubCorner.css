@@ -1,6 +1,6 @@
 .github-corner svg {
-  fill: white;
-  color: transparent;
+  fill: rgba(255, 255, 255, 0.15);
+  color: white;
   position: fixed;
   top: 0;
   right: 0;
