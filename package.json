@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "check": "biome check . --write",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "cp scripts/pre-push .git/hooks/pre-push && chmod +x .git/hooks/pre-push"
   },
   "dependencies": {
     "react": "^19.1.0",
