@@ -1,0 +1,14 @@
+{
+  "name": "Que cor é agora?",
+  "short_name": "Que cor é agora?",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "browser"
+}

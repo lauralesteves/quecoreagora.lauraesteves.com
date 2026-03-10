@@ -1,0 +1,13 @@
+/* TEAM */
+Creator: Laura Esteves
+Site: https://lauraesteves.com
+Contact: lauralesteves [at] gmail.com
+Location: São Paulo, Brasil
+
+/* SITE */
+Name: Que cor é agora?
+URL: https://quecoreagora.lauraesteves.com
+Description: Relógio cromático em tempo real — o horário vira cor hexadecimal.
+Standards: HTML5, CSS3, ECMAScript 2020
+Components: React 19, TypeScript, Tailwind CSS 4, Vite
+Hosting: TBD
