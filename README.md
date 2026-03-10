@@ -2,7 +2,7 @@
 
 Quer saber que cor hexadecimal é agora? Seus problemas acabaram!
 
-O horário atual (HH:MM:SS) é convertido em código hexadecimal (#HHMMSS) e renderizado como cor de fundo em tempo real.
+A cada segundo, o horário atual (HH:MM:SS) vira um código hexadecimal (#HHMMSS) e pinta a tela inteira. De preto à meia-noite a azul-petróleo no fim da tarde; um relógio cromático em tempo real. Mais um site de extrema utilidade pública.
 
 ## Stack
 
