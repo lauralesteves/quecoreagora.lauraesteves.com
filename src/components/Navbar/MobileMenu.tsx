@@ -9,6 +9,7 @@ function HamburgerIcon() {
       viewBox="0 0 24 24"
       fill="currentColor"
       className="w-6 h-6"
+      aria-hidden="true"
     >
       <path
         fillRule="evenodd"
@@ -26,6 +27,7 @@ function CloseIcon() {
       viewBox="0 0 24 24"
       fill="currentColor"
       className="w-6 h-6"
+      aria-hidden="true"
     >
       <path
         fillRule="evenodd"

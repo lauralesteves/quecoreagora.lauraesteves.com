@@ -12,6 +12,7 @@ function ExternalLinkIcon() {
       viewBox="0 0 20 20"
       fill="currentColor"
       className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5"
+      aria-hidden="true"
     >
       <path
         fillRule="evenodd"
@@ -33,6 +34,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       className={`text-white hover:opacity-80 transition-opacity ${className}`}
+      rel="noreferrer"
     >
       {children}
       {showIcon && <ExternalLinkIcon />}

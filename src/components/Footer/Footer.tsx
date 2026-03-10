@@ -8,7 +8,8 @@ export function Footer() {
         <a
           href="https://lauraesteves.com"
           target="_blank"
-          className="underline hover:opacity-80 transition-opacity"
+          className="font-bold hover:opacity-80 transition-opacity"
+          rel="noreferrer"
         >
           Laura Esteves
         </a>

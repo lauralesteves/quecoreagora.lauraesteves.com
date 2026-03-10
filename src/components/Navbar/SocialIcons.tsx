@@ -39,13 +39,17 @@ export function SocialIcons({ className = '' }: SocialIconsProps) {
             href={social.href}
             target="_blank"
             aria-label={social.name}
+            title={social.name}
             className="text-white hover:opacity-80 transition-opacity"
+            rel="noreferrer"
           >
+            <span className="sr-only">{social.name}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               className="w-5 h-5"
+              aria-hidden="true"
             >
               <path d={social.path} />
             </svg>

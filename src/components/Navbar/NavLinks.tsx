@@ -9,10 +9,16 @@ export function NavLinks({ vertical = false }: NavLinksProps) {
     <div
       className={`flex ${vertical ? 'flex-col gap-4' : 'items-center gap-6'}`}
     >
-      <ExternalLink href="https://lauraesteves.com" className="text-sm font-semibold tracking-wide">
+      <ExternalLink
+        href="https://lauraesteves.com"
+        className="text-base font-bold tracking-wide uppercase"
+      >
         Laura Esteves
       </ExternalLink>
-      <ExternalLink href="https://escrevida.com" className="text-sm font-semibold tracking-wide">
+      <ExternalLink
+        href="https://escrevida.com"
+        className="text-base font-bold tracking-wide uppercase"
+      >
         Escrevida
       </ExternalLink>
     </div>

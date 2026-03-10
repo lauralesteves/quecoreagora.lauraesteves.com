@@ -25,7 +25,5 @@
     "vite": "^6.3.0",
     "vitest": "^3.1.0"
   },
-  "trustedDependencies": [
-    "@biomejs/biome"
-  ]
+  "trustedDependencies": ["@biomejs/biome"]
 }
