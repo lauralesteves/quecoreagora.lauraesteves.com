@@ -9,11 +9,11 @@ export function ColorDisplay() {
       style={{ backgroundColor: hex }}
     >
       <div className="flex items-center gap-4 mb-8">
-        <span className="block w-20 border-t border-dashed border-white sm:w-40 md:w-64" />
+        <span className="block w-20 h-[3px] bg-white sm:w-40 md:w-64" />
         <h1 className="font-display text-white text-lg sm:text-2xl md:text-[32px] tracking-wide whitespace-nowrap">
           Que cor é agora?
         </h1>
-        <span className="block w-20 border-t border-dashed border-white sm:w-40 md:w-64" />
+        <span className="block w-20 h-[3px] bg-white sm:w-40 md:w-64" />
       </div>
 
       <p className="font-display text-white text-[60px] leading-none sm:text-[80px] md:text-[150px]">
