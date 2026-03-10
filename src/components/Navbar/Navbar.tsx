@@ -1,3 +1,4 @@
+import { MobileMenu } from './MobileMenu';
 import { NavLinks } from './NavLinks';
 import { SocialIcons } from './SocialIcons';
 
@@ -9,6 +10,10 @@ export function Navbar() {
           Que cor é agora?
         </span>
 
+        <span className="font-logo text-white text-xl md:hidden">
+          Que cor é agora?
+        </span>
+
         <div className="hidden md:flex items-center">
           <NavLinks />
         </div>
@@ -17,6 +22,10 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center">
           <SocialIcons />
+        </div>
+
+        <div className="ml-auto">
+          <MobileMenu />
         </div>
       </div>
     </nav>
