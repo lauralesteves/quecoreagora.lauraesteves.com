@@ -5,6 +5,7 @@ node_modules/
 dist/
 dist-pt/
 dist-en/
+dist-es/
 
 # Environment
 .env
