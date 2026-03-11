@@ -43,8 +43,8 @@ function CloseIcon() {
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openLabel = t.lang === 'pt-BR' ? 'Abrir menu' : 'Open menu';
-  const closeLabel = t.lang === 'pt-BR' ? 'Fechar menu' : 'Close menu';
+  const openLabel = t.openMenu;
+  const closeLabel = t.closeMenu;
 
   return (
     <div className="md:hidden">

@@ -21,6 +21,13 @@ const localeData: Record<
     description:
       'What color is it now? Every second, the current time (HH:MM:SS) becomes a hex color code (#HHMMSS) and fills the entire screen. From black at midnight to teal blue at dusk — a real-time chromatic clock. Yet another site of extreme public utility.',
   },
+  es: {
+    lang: 'es',
+    title: '¿Qué color es ahora?',
+    url: 'https://quecoloresahora.lauraesteves.com',
+    description:
+      '¿Qué color es ahora? Cada segundo, la hora actual (HH:MM:SS) se convierte en un código hexadecimal (#HHMMSS) y pinta toda la pantalla. De negro a medianoche a azul petróleo al atardecer; un reloj cromático en tiempo real. Otro sitio más de extrema utilidad pública.',
+  },
 };
 
 function htmlLocalePlugin(): Plugin {
