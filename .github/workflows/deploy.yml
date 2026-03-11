@@ -23,6 +23,9 @@ jobs:
       - name: Build EN
         run: VITE_LOCALE=en bun run vite build --outDir dist-en
 
+      - name: Build ES
+        run: VITE_LOCALE=es bun run vite build --outDir dist-es
+
       - name: Type check
         run: bun run tsc -b
 
@@ -87,6 +90,33 @@ jobs:
             --include "humans.txt" \
             --include ".well-known/*"
 
+      - name: Deploy ES assets to S3 (immutable cache)
+        run: |
+          aws s3 sync dist-es/ s3://quecoloresahora.lauraesteves.com \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
+            --exclude "robots.txt" \
+            --exclude "site.webmanifest" \
+            --exclude "browserconfig.xml" \
+            --exclude "ai.txt" \
+            --exclude "humans.txt" \
+            --exclude ".well-known/*"
+
+      - name: Deploy ES HTML and metadata to S3 (short cache)
+        run: |
+          aws s3 sync dist-es/ s3://quecoloresahora.lauraesteves.com \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "robots.txt" \
+            --include "site.webmanifest" \
+            --include "browserconfig.xml" \
+            --include "ai.txt" \
+            --include "humans.txt" \
+            --include ".well-known/*"
+
       - name: Invalidate CloudFront caches
         run: |
           aws cloudfront create-invalidation \
@@ -94,4 +124,7 @@ jobs:
             --paths "/*"
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.EN_CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.ES_CLOUDFRONT_DISTRIBUTION_ID }} \
             --paths "/*"
