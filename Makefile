@@ -1,8 +1,10 @@
 PT_BUCKET := quecoreagora.lauraesteves.com
 EN_BUCKET := whatcolorisitnow.lauraesteves.com
+ES_BUCKET := quecoloresahora.lauraesteves.com
 
 PT_CF_ID := $(shell aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?contains(@, '$(PT_BUCKET)')]] | [0].Id" --output text)
 EN_CF_ID := $(shell aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?contains(@, '$(EN_BUCKET)')]] | [0].Id" --output text)
+ES_CF_ID := $(shell aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[?contains(@, '$(ES_BUCKET)')]] | [0].Id" --output text)
 
 export AWS_PAGER :=
 
@@ -29,9 +31,9 @@ SYNC_METADATA = aws s3 sync $(1) s3://$(2) \
 	--include "humans.txt" \
 	--include ".well-known/*"
 
-.PHONY: build build-pt build-en deploy deploy-pt deploy-en clean
+.PHONY: build build-pt build-en build-es deploy deploy-pt deploy-en deploy-es clean
 
-## Build ambos os locales
+## Build todos os locales
 build:
 	bun run build:all
 
@@ -43,10 +45,15 @@ build-pt:
 build-en:
 	bun run tsc -b && VITE_LOCALE=en bun run vite build --outDir dist-en
 
-## Deploy completo (PT + EN)
+## Build apenas ES
+build-es:
+	bun run tsc -b && VITE_LOCALE=es bun run vite build --outDir dist-es
+
+## Deploy completo (PT + EN + ES)
 deploy: build
 	@$(MAKE) deploy-pt
 	@$(MAKE) deploy-en
+	@$(MAKE) deploy-es
 
 ## Deploy PT para S3 + invalidacao do CloudFront
 deploy-pt:
@@ -70,6 +77,17 @@ deploy-en:
 		--paths "/*"
 	@echo "EN deploy complete!"
 
+## Deploy ES para S3 + invalidacao do CloudFront
+deploy-es:
+	@echo "Deploying ES to s3://$(ES_BUCKET)..."
+	$(call SYNC_IMMUTABLE,dist-es/,$(ES_BUCKET))
+	$(call SYNC_METADATA,dist-es/,$(ES_BUCKET))
+	@echo "Invalidating ES CloudFront cache..."
+	aws cloudfront create-invalidation \
+		--distribution-id $(ES_CF_ID) \
+		--paths "/*"
+	@echo "ES deploy complete!"
+
 ## Limpar diretorios de build
 clean:
-	rm -rf dist-pt/ dist-en/
+	rm -rf dist-pt/ dist-en/ dist-es/

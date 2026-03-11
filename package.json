@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "VITE_LOCALE=pt vite",
     "dev:en": "VITE_LOCALE=en vite",
+    "dev:es": "VITE_LOCALE=es vite",
     "build": "tsc -b && vite build",
     "build:pt": "VITE_LOCALE=pt vite build",
     "build:en": "VITE_LOCALE=en vite build",
-    "build:all": "tsc -b && VITE_LOCALE=pt vite build --outDir dist-pt && VITE_LOCALE=en vite build --outDir dist-en",
+    "build:es": "VITE_LOCALE=es vite build",
+    "build:all": "tsc -b && VITE_LOCALE=pt vite build --outDir dist-pt && VITE_LOCALE=en vite build --outDir dist-en && VITE_LOCALE=es vite build --outDir dist-es",
     "check": "biome check . --write",
     "preview": "vite preview",
     "test": "vitest",
