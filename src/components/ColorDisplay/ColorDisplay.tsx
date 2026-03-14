@@ -25,9 +25,6 @@ export function ColorDisplay() {
         {hex}
       </p>
 
-      <p className="font-display text-white text-lg sm:text-2xl md:text-[32px] mt-8 text-center px-4">
-        {t.displaySubtitle}
-      </p>
     </main>
   );
 }

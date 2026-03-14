@@ -11,7 +11,7 @@ interface Translations {
   siteTitle: string;
   logoText: string;
   displayTitle: string;
-  displaySubtitle: string;
+  footerTagline: string;
   footerText: string;
   footerName: string;
   lauraUrl: string;
@@ -28,7 +28,7 @@ const pt: Translations = {
   siteTitle: 'Que cor é agora?',
   logoText: 'Que cor é agora?',
   displayTitle: 'Que cor é agora?',
-  displaySubtitle: 'Mais um site de extrema utilidade pública',
+  footerTagline: 'Mais um site de extrema utilidade pública',
   footerText: 'Feito com ❤️ e ☕️ por',
   footerName: 'Laura Esteves',
   lauraUrl: 'https://lauraesteves.com',
@@ -49,7 +49,7 @@ const en: Translations = {
   siteTitle: 'What color is it now?',
   logoText: 'What color is it now?',
   displayTitle: 'What color is it now?',
-  displaySubtitle: 'Yet another site of extreme public utility',
+  footerTagline: 'Yet another site of extreme public utility',
   footerText: 'Made with ❤️ and ☕️ by',
   footerName: 'Laura Esteves',
   lauraUrl: 'https://lauraesteves.com/en',
@@ -70,7 +70,7 @@ const es: Translations = {
   siteTitle: '¿Qué color es ahora?',
   logoText: '¿Qué color es ahora?',
   displayTitle: '¿Qué color es ahora?',
-  displaySubtitle: 'Otro sitio más de extrema utilidad pública',
+  footerTagline: 'Otro sitio más de extrema utilidad pública',
   footerText: 'Hecho con ❤️ y ☕️ por',
   footerName: 'Laura Esteves',
   lauraUrl: 'https://lauraesteves.com/es',
