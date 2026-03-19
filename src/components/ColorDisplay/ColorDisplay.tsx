@@ -76,7 +76,7 @@ export function ColorDisplay() {
       </button>
 
       {fullDay && !showWheel && (
-        <p className="font-display text-fg/50 text-[2.5em] mt-4 tracking-wider transition-colors duration-800">
+        <p className="font-display text-fg/50 text-base sm:text-xl md:text-[2.5em] mt-4 tracking-wider transition-colors duration-800">
           R = H/23 &middot; 255 &nbsp;&nbsp; G = M/59 &middot; 255 &nbsp;&nbsp;
           B = S/59 &middot; 255
         </p>
