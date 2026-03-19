@@ -24,6 +24,8 @@ interface Translations {
   backToClock: string;
   colorWheel: string;
   brightness: string;
+  seeFullSpectrum: string;
+  backToNormalClock: string;
 }
 
 const pt: Translations = {
@@ -48,6 +50,8 @@ const pt: Translations = {
   backToClock: 'Voltar ao relógio',
   colorWheel: 'Roda de cores',
   brightness: 'Brilho',
+  seeFullSpectrum: 'Veja todo o espectro',
+  backToNormalClock: 'Voltar ao relógio normal',
 };
 
 const en: Translations = {
@@ -72,6 +76,8 @@ const en: Translations = {
   backToClock: 'Back to clock',
   colorWheel: 'Color wheel',
   brightness: 'Brightness',
+  seeFullSpectrum: 'See full spectrum',
+  backToNormalClock: 'Back to normal clock',
 };
 
 const es: Translations = {
@@ -96,6 +102,8 @@ const es: Translations = {
   backToClock: 'Volver al reloj',
   colorWheel: 'Rueda de colores',
   brightness: 'Brillo',
+  seeFullSpectrum: 'Ver espectro completo',
+  backToNormalClock: 'Volver al reloj normal',
 };
 
 const locales: Record<Locale, Translations> = { pt, en, es };
