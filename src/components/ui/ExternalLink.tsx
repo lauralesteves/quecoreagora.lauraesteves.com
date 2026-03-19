@@ -17,7 +17,7 @@ export function ExternalLink({
     <a
       href={href}
       target="_blank"
-      className={`text-white hover:opacity-80 transition-opacity ${className}`}
+      className={`text-fg hover:opacity-80 transition-opacity ${className}`}
       rel="noreferrer"
     >
       {children}
@@ -26,7 +26,8 @@ export function ExternalLink({
           src={externalLinkIcon}
           alt=""
           aria-hidden="true"
-          className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5 invert"
+          className="inline-block w-3.5 h-3.5 ml-1 -mt-0.5"
+          style={{ filter: 'var(--icon-invert, invert(1))' }}
         />
       )}
     </a>
