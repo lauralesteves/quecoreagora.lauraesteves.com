@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@property --fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+
 @font-face {
   font-family: "That Sounds Great";
   src: url("./assets/fonts/that-sounds-great/that-sounds-great.regular.otf")
@@ -15,6 +21,8 @@
   --font-logo: "That Sounds Great", cursive;
 
   --transition-duration-800: 800ms;
+
+  --color-fg: var(--fg, #ffffff);
 }
 
 body {
@@ -63,7 +71,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: white;
+  background: var(--fg, #fff);
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
@@ -72,7 +80,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: white;
+  background: var(--fg, #fff);
   cursor: pointer;
   border: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
