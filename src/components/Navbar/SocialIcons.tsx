@@ -40,7 +40,7 @@ export function SocialIcons({ className = '' }: SocialIconsProps) {
             target="_blank"
             aria-label={social.name}
             title={social.name}
-            className="text-white hover:opacity-80 transition-opacity"
+            className="text-fg hover:opacity-80 transition-opacity"
             rel="noreferrer"
           >
             <span className="sr-only">{social.name}</span>

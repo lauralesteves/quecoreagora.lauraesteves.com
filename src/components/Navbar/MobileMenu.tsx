@@ -51,7 +51,7 @@ export function MobileMenu() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="text-white p-2"
+        className="text-fg p-2"
         aria-label={isOpen ? closeLabel : openLabel}
       >
         {isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -64,7 +64,7 @@ export function MobileMenu() {
       >
         <div className="px-6 py-5 flex flex-col gap-4">
           <NavLinks vertical />
-          <div className="border-t border-white/30 pt-4 flex items-center gap-4">
+          <div className="border-t border-fg/30 pt-4 flex items-center gap-4">
             <SocialIcons />
             <LanguageFlag />
           </div>

@@ -203,7 +203,7 @@ export function ColorWheel({
           onTouchEnd={() => setIsDragging(false)}
         />
         <div
-          className="absolute w-4 h-4 rounded-full border-2 border-white shadow-lg pointer-events-none time-marker-pulse"
+          className="absolute w-4 h-4 rounded-full border-2 border-fg shadow-lg pointer-events-none time-marker-pulse"
           style={{
             left: timeX,
             top: timeY,
@@ -212,7 +212,7 @@ export function ColorWheel({
         />
         {hasPicked && (
           <div
-            className="absolute w-5 h-5 rounded-full border-2 border-white shadow-lg pointer-events-none"
+            className="absolute w-5 h-5 rounded-full border-2 border-fg shadow-lg pointer-events-none"
             style={{
               left: pickX,
               top: pickY,
@@ -239,7 +239,7 @@ export function ColorWheel({
       <button
         type="button"
         onClick={triggerClose}
-        className="flex items-center gap-2 text-white/70 hover:text-white text-sm font-display tracking-wider transition-colors cursor-pointer"
+        className="flex items-center gap-2 text-fg/70 hover:text-fg text-[1.5em] font-display tracking-wider transition-colors cursor-pointer"
       >
         <svg
           className="w-5 h-5"
