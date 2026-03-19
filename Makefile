@@ -31,7 +31,11 @@ SYNC_METADATA = aws s3 sync $(1) s3://$(2) \
 	--include "humans.txt" \
 	--include ".well-known/*"
 
-.PHONY: build build-pt build-en build-es deploy deploy-pt deploy-en deploy-es clean
+.PHONY: server build build-pt build-en build-es deploy deploy-pt deploy-en deploy-es clean
+
+## Dev server na porta 5000
+server:
+	yarn dev
 
 ## Build todos os locales
 build:
