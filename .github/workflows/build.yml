@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Type check
+        run: bun run tsc -b
+
+      - name: Build PT
+        run: VITE_LOCALE=pt bun run vite build --outDir dist-pt
+
+      - name: Build EN
+        run: VITE_LOCALE=en bun run vite build --outDir dist-en
+
+      - name: Build ES
+        run: VITE_LOCALE=es bun run vite build --outDir dist-es

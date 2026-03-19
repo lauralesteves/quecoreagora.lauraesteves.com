@@ -47,4 +47,7 @@ function htmlLocalePlugin(): Plugin {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), htmlLocalePlugin()],
+  server: {
+    port: 5000,
+  },
 });
