@@ -18,6 +18,17 @@ export function hslToHex(h: number, s: number, l: number): string {
   return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
 
+export function getRelativeLuminance(hex: string): number {
+  const toLinear = (c: number) =>
+    c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+
+  const r = toLinear(Number.parseInt(hex.slice(1, 3), 16) / 255);
+  const g = toLinear(Number.parseInt(hex.slice(3, 5), 16) / 255);
+  const b = toLinear(Number.parseInt(hex.slice(5, 7), 16) / 255);
+
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
 export function hexToHsl(hex: string): { h: number; s: number; l: number } {
   const r = Number.parseInt(hex.slice(1, 3), 16) / 255;
   const g = Number.parseInt(hex.slice(3, 5), 16) / 255;
